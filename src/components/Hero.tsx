@@ -47,6 +47,15 @@ export default function Hero() {
   const [isExpanded, setIsExpanded] = useState(false) 
   const [isCvModalOpen, setIsCvModalOpen] = useState(false)
 
+  const handleCvClick = () => {
+    // En móvil los iframes no renderizan PDFs — abrimos en nueva pestaña directamente
+    if (window.innerWidth < 1024) {
+      window.open('/cv.pdf', '_blank')
+    } else {
+      setIsCvModalOpen(true)
+    }
+  }
+
   return (
 
     <section
@@ -157,7 +166,7 @@ export default function Hero() {
             style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}
           >
             <button
-              onClick={() => setIsCvModalOpen(true)}
+              onClick={handleCvClick}
               className={cn(
                 buttonVariants({ size: "default" }),
                 "group h-10 w-40 sm:h-12 sm:w-48 text-sm sm:text-base rounded-full font-semibold shadow-md shadow-lilac-600/10 hover:shadow-lg hover:shadow-lilac-600/20 hover:scale-105 transition-all duration-300 border-2 border-transparent flex items-center justify-center"
