@@ -161,7 +161,7 @@ export default function About() {
             </div>
 
             {/* 3 Highlights visuales rápidos para escaneo de reclutadores */}
-            <div className="pt-2 flex gap-2">
+            <div className="pt-2 flex flex-col sm:flex-row gap-2 items-center">
               {[
                 { icon: <Users className="w-4 h-4 text-lilac-300 shrink-0" />, label: t('about.highlights.teamwork') },
                 { icon: <Heart className="w-4 h-4 text-lilac-300 shrink-0" />, label: t('about.highlights.communication') },
@@ -169,7 +169,7 @@ export default function About() {
               ].map(({ icon, label }) => (
                 <div
                   key={label}
-                  className="flex flex-1 items-center gap-1.5 p-2 rounded-xl border border-lilac-500/25 shadow-sm hover:border-lilac-400/50 hover:-translate-y-0.5 transition-all group/item"
+                  className="flex w-full sm:flex-1 items-center justify-center gap-2 p-2.5 rounded-xl border border-lilac-500/25 shadow-sm hover:border-lilac-400/50 hover:-translate-y-0.5 transition-all group/item"
                   style={{ backgroundColor: 'var(--surface)' }}
                 >
                   <div className="w-6 h-6 rounded-lg bg-lilac-500/15 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
