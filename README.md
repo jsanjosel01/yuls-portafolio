@@ -7,13 +7,12 @@
 
 ## ✨ Demo en vivo
 
-🔗 **[yuls-portafolio.vercel.app](https://yuls-portafolio.vercel.app)** *(próximamente)*
+🔗 **[yuls-portafolio.vercel.app](https://yulsportafolio.vercel.app)**
 
 ---
 
 ## 📸 Vista previa
 
-<!-- Puedes añadir aquí un screenshot de la web cuando esté en producción -->
 
 ---
 
