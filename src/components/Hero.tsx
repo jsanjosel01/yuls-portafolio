@@ -247,38 +247,46 @@ export default function Hero() {
 
       {/* Modal del CV */}
       {isCvModalOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md animate-fade-in flex flex-col items-center justify-center p-4 sm:p-8 gap-4">
-
-          {/* Boton cerrar arriba a la derecha */}
-          <div className="w-full max-w-4xl flex justify-end">
-            <button
-              onClick={() => setIsCvModalOpen(false)}
-              className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-full transition-colors shadow-lg backdrop-blur-sm cursor-pointer border border-white/20"
-            >
-              <X className="h-4 w-4" />
-              {t('hero.cvClose')}
-            </button>
-          </div>
-
-          {/* Visor del PDF */}
-          <div className="w-full max-w-4xl flex-1 min-h-0 rounded-xl overflow-hidden shadow-2xl bg-white">
-            <iframe
-              src="/cv.pdf#toolbar=0"
-              className="w-full h-full border-none"
-              title="CV PDF"
-            />
-          </div>
-
-          {/* Boton Descargar debajo y centrado */}
-          <a
-            href="/cv.pdf"
-            download="Julia_Yuls_CV.pdf"
-            className="flex items-center gap-2 px-6 py-3 bg-lilac-600 hover:bg-lilac-500 text-white text-sm sm:text-base font-semibold rounded-full transition-colors shadow-lg"
+        // Fondo oscuro — clic fuera cierra el modal
+        <div
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md animate-fade-in flex flex-col items-center justify-center p-4 sm:p-8 gap-4"
+          onClick={() => setIsCvModalOpen(false)}
+        >
+          {/* Botón X fijo — esquina superior derecha, siempre visible */}
+          <button
+            onClick={() => setIsCvModalOpen(false)}
+            className="fixed top-4 right-4 z-[110] flex items-center justify-center w-10 h-10 bg-white text-gray-900 rounded-full shadow-xl hover:bg-gray-100 transition-colors cursor-pointer"
+            aria-label="Cerrar"
           >
-            <Download className="h-4 w-4" />
-            {t('hero.cvDownload')}
-          </a>
+            <X className="h-5 w-5" />
+          </button>
 
+          {/* Contenido del modal — stopPropagation para no cerrar al hacer clic dentro */}
+          <div
+            className="w-full max-w-4xl flex flex-col gap-4 flex-1 min-h-0"
+            onClick={e => e.stopPropagation()}
+          >
+            {/* Visor del PDF */}
+            <div className="w-full flex-1 min-h-0 rounded-xl overflow-hidden shadow-2xl bg-white">
+              <iframe
+                src="/cv.pdf#toolbar=0"
+                className="w-full h-full border-none"
+                title="CV PDF"
+              />
+            </div>
+
+            {/* Botón Descargar debajo y centrado */}
+            <div className="flex justify-center">
+              <a
+                href="/cv.pdf"
+                download="Julia_Yuls_CV.pdf"
+                className="flex items-center gap-2 px-6 py-3 bg-lilac-600 hover:bg-lilac-500 text-white text-sm sm:text-base font-semibold rounded-full transition-colors shadow-lg"
+              >
+                <Download className="h-4 w-4" />
+                {t('hero.cvDownload')}
+              </a>
+            </div>
+          </div>
         </div>
       )}
     </section>
