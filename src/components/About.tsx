@@ -164,8 +164,8 @@ export default function About() {
             <div className="pt-2 flex flex-col sm:flex-row gap-2 items-center">
               {[
                 { icon: <Users className="w-4 h-4 text-lilac-300 shrink-0" />, label: t('about.highlights.teamwork') },
-                { icon: <Heart className="w-4 h-4 text-lilac-300 shrink-0" />, label: t('about.highlights.communication') },
                 { icon: <Lightbulb className="w-4 h-4 text-lilac-300 shrink-0" />, label: t('about.highlights.proactive') },
+                { icon: <Heart className="w-4 h-4 text-lilac-300 shrink-0" />, label: t('about.highlights.communication') },
               ].map(({ icon, label }) => (
                 <div
                   key={label}
