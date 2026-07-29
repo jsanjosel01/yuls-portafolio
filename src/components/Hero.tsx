@@ -245,36 +245,40 @@ export default function Hero() {
         }
       `}</style>
 
-      {/* Modal del CV Pantalla Completa pero con márgenes */}
+      {/* Modal del CV */}
       {isCvModalOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md animate-fade-in flex items-center justify-center p-4 sm:p-12">
-          
-          {/* Botones flotantes top-right (absolutos a la pantalla) */}
-          <div className="absolute top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-2 sm:gap-3 z-20">
-            <a
-              href="/cv.pdf"
-              download="Julia_Yuls_CV.pdf"
-              className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-lilac-600/90 text-white text-sm sm:text-base font-medium rounded-full hover:bg-lilac-600 transition-colors shadow-lg backdrop-blur-sm"
-            >
-              <Download className="h-4 w-4" />
-              Descargar
-            </a>
+        <div className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md animate-fade-in flex flex-col items-center justify-center p-4 sm:p-8 gap-4">
+
+          {/* Boton cerrar arriba a la derecha */}
+          <div className="w-full max-w-4xl flex justify-end">
             <button
               onClick={() => setIsCvModalOpen(false)}
-              className="p-1.5 sm:p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors shadow-lg backdrop-blur-sm cursor-pointer"
+              className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-full transition-colors shadow-lg backdrop-blur-sm cursor-pointer border border-white/20"
             >
-              <X className="h-5 w-5" />
+              <X className="h-4 w-4" />
+              Cerrar
             </button>
           </div>
 
-          {/* Contenedor del CV centrado y con límites */}
-          <div className="w-full h-full max-w-4xl max-h-[85vh] mt-14 sm:mt-0 rounded-xl overflow-hidden shadow-2xl bg-white relative">
+          {/* Visor del PDF */}
+          <div className="w-full max-w-4xl flex-1 min-h-0 rounded-xl overflow-hidden shadow-2xl bg-white">
             <iframe
               src="/cv.pdf#toolbar=0"
               className="w-full h-full border-none"
               title="CV PDF"
             />
           </div>
+
+          {/* Boton Descargar debajo y centrado */}
+          <a
+            href="/cv.pdf"
+            download="Julia_Yuls_CV.pdf"
+            className="flex items-center gap-2 px-6 py-3 bg-lilac-600 hover:bg-lilac-500 text-white text-sm sm:text-base font-semibold rounded-full transition-colors shadow-lg"
+          >
+            <Download className="h-4 w-4" />
+            Descargar CV
+          </a>
+
         </div>
       )}
     </section>
