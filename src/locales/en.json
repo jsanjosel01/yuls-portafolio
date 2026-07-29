@@ -1,0 +1,114 @@
+{
+  "navbar": {
+    "about": "About me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi! I'm",
+    "role": "FULL STACK WEB DEVELOPER",
+    "openToWork": "Open to work",
+    "p1": "I started in the world of photography and visual arts, and now I translate that aesthetic sensibility into pure code.",
+    "p2": "I build robust web applications, making sure every project not only works flawlessly but also delivers a visually impeccable user experience.",
+    "readMore": "Read more...",
+    "readLess": "Read less",
+    "downloadCV": "View CV",
+    "contactBtn": "Contact",
+    "viewProjects": "View featured projects",
+    "cvSoon": "Coming soon! My CV will be available very shortly.",
+    "imgAlt": "Julia San Jose (Yuls) - Full Stack Web Developer"
+  },
+  "about": {
+    "title": "About",
+    "titleHighlight": "me",
+    "role": "Full Stack Web Developer & Higher Technician in Image.",
+    "p1": "Combining my studies in <highlight>Web Application Development (DAW)</highlight>, I focus on building complete solutions while bringing the visual sensibility I gained through my photography background. I'm looking for my next adventure at a company that values clean code and thoughtful design.",
+    "p2": "I see development as a collaborative process where clear communication is just as important as code architecture. I adapt quickly to new technical environments and enjoy turning complex requirements into clean, accessible, and highly functional interfaces.",
+    "readMore": "Read more...",
+    "readLess": "Read less",
+    "highlights": {
+      "teamwork": "Teamwork",
+      "communication": "Assertive communication",
+      "proactive": "Proactive problem solving"
+    },
+    "floatingCard": {
+      "title": "Arts & Code",
+      "subtitle": "Visual aesthetics + Logic"
+    },
+    "bento": {
+      "fullstack": {
+        "subtitle": "Area of Expertise",
+        "title": "Full Stack Developer",
+        "description": "I build interfaces with React and server logic with Java, PHP or Node. Always focused on quality and user experience."
+      },
+      "visual": {
+        "subtitle": "Key Differentiator",
+        "title": "Visual Eye & Code",
+        "description": "My background in visual arts lets me design with real aesthetic judgment, not just implement. The result: products that work and delight."
+      },
+      "learning": {
+        "subtitle": "Mindset",
+        "title": "Always Learning",
+        "description": "Every project is an opportunity to learn something new. I adapt quickly to new technologies and enjoy the continuous improvement process."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend & Database",
+      "tools": "Tools & DevOps",
+      "design": "Design & Image"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "liveDemo": "Live Demo",
+    "github": "GitHub",
+    "items": {
+      "vanlife": {
+        "title": "VanLife",
+        "description": "Platform for digital nomads with interactive maps and routes."
+      },
+      "landing": {
+        "title": "3D Landing Page",
+        "description": "Interactive landing page with 3D models and fluid animations."
+      },
+      "animations": {
+        "title": "Punto Objetivo Fest",
+        "description": "Web design and development for a photography festival, featuring interactive animations."
+      },
+      "gasolineras": {
+        "title": "Gas Station Prices",
+        "description": "Web application to compare fuel prices in real-time by consuming the official Government API."
+      },
+      "kanban": {
+        "title": "Kanban Board",
+        "description": "Interactive task manager. Organize projects and tasks by dragging and dropping cards across different columns."
+      },
+      "app": {
+        "title": "EntrenaTU",
+        "description": "Personal training platform to create and manage your own routines."
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's talk?",
+    "titleHighlight": "Get in touch",
+    "p1": "I'm always open to hearing new proposals, job opportunities, or simply having a virtual coffee.",
+    "p2": "I respond quickly.",
+    "coffee": "Buy me a coffee",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "copyright": "Designed and built with",
+    "privacy": "Privacy",
+    "legal": "Legal Notice",
+    "cookies": "Cookies",
+    "scrollTop": "Back to top"
+  }
+}

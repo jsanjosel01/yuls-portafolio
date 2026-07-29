@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa" /> <!-- lilac-400 -->
+      <stop offset="100%" stop-color="#8b5cf6" /> <!-- lilac-500 -->
+    </linearGradient>
+  </defs>
+  <!-- Diseño minimalista combinando una Y con brackets de código -->
+  <path d="M12 11v11" />
+  <path d="M6 3l6 8 6-8" />
+</svg>

@@ -1,0 +1,114 @@
+{
+  "navbar": {
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "¡Hola! Soy",
+    "role": "DESARROLLADORA WEB FULL STACK",
+    "openToWork": "Open to work",
+    "p1": "Comencé en el mundo de la fotografía y las artes visuales, y ahora traduzco esa sensibilidad estética a código puro.",
+    "p2": "Construyo aplicaciones web robustas, cuidando que cada proyecto no solo funcione a la perfección, sino que ofrezca una experiencia de usuario visualmente impecable.",
+    "readMore": "Leer más...",
+    "readLess": "Leer menos",
+    "downloadCV": "Ver CV",
+    "contactBtn": "Contacto",
+    "viewProjects": "Ver proyectos destacados",
+    "cvSoon": "¡Próximamente! El CV estará disponible muy pronto.",
+    "imgAlt": "Julia San Jose (Yuls) - Desarrolladora web full stack"
+  },
+  "about": {
+    "title": "Sobre",
+    "titleHighlight": "mí",
+    "role": "Desarrolladora Web Full Stack & Técnica Superior en Imagen.",
+    "p1": "Combinando mis estudios en <highlight>Desarrollo de Aplicaciones Web (DAW)</highlight>, me dedico a programar soluciones completas aportando la sensibilidad visual que me dio mi formación en fotografía. Busco mi próxima aventura en una empresa que valore el código limpio y los diseños bien cuidados.",
+    "p2": "Entiendo el desarrollo como un proceso colaborativo donde la comunicación clara es tan importante como la arquitectura del código. Me adapto con agilidad a nuevos entornos técnicos y disfruto transformando requisitos complejos en interfaces limpias, accesibles y altamente funcionales.",
+    "readMore": "Leer más...",
+    "readLess": "Leer menos",
+    "highlights": {
+      "teamwork": "Trabajo en equipo",
+      "communication": "Comunicación asertiva",
+      "proactive": "Resolución proactiva"
+    },
+    "floatingCard": {
+      "title": "Artes & Código",
+      "subtitle": "Estética visual + Lógica"
+    },
+    "bento": {
+      "fullstack": {
+        "subtitle": "Área de Especialidad",
+        "title": "Full Stack Developer",
+        "description": "Desarrollo interfaces con React y lógica de servidor con Java, PHP o Node. Siempre con el foco en la calidad y la experiencia de usuario."
+      },
+      "visual": {
+        "subtitle": "Diferenciador Clave",
+        "title": "Ojo Visual & Código",
+        "description": "Mi formación en artes visuales me permite diseñar con criterio estético real, no solo implementar. El resultado: productos que funcionan y enamoran."
+      },
+      "learning": {
+        "subtitle": "Mentalidad",
+        "title": "Always Learning",
+        "description": "Cada proyecto es una oportunidad para aprender algo nuevo. Me adapto rápido a nuevas tecnologías y disfruto del proceso de mejora continua."
+      }
+    }
+  },
+  "skills": {
+    "title": "Habilidades",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend & Base de Datos",
+      "tools": "Herramientas & DevOps",
+      "design": "Diseño e Imagen"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "liveDemo": "Demo en Vivo",
+    "github": "GitHub",
+    "items": {
+      "vanlife": {
+        "title": "VanLife",
+        "description": "Plataforma para nómadas digitales con mapas interactivos y rutas."
+      },
+      "landing": {
+        "title": "3D Landing Page",
+        "description": "Landing page interactiva con modelos 3D y animaciones fluidas."
+      },
+      "animations": {
+        "title": "Punto Objetivo Fest",
+        "description": "Diseño y desarrollo web para un festival de fotografía, destacado por sus animaciones e interacciones."
+      },
+      "gasolineras": {
+        "title": "Precios de Gasolineras",
+        "description": "Aplicación web para comparar precios de combustible en tiempo real consumiendo la API oficial del Gobierno."
+      },
+      "kanban": {
+        "title": "Tablero Kanban",
+        "description": "Gestor de tareas interactivo. Permite organizar proyectos y tareas arrastrando y soltando tarjetas entre diferentes columnas."
+      },
+      "app": {
+        "title": "EntrenaTU",
+        "description": "Plataforma de entrenamiento personal para crear y gestionar tus propias rutinas."
+      }
+    }
+  },
+  "contact": {
+    "title": "¿Hablamos?",
+    "titleHighlight": "Contacta conmigo",
+    "p1": "Siempre estoy abierta a escuchar nuevas propuestas, oportunidades de trabajo o simplemente tomar un café virtual.",
+    "p2": "Respondo rápido.",
+    "coffee": "Invítame a un café",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "copyright": "Diseñado y desarrollado con",
+    "privacy": "Privacidad",
+    "legal": "Aviso Legal",
+    "cookies": "Cookies",
+    "scrollTop": "Volver arriba"
+  }
+}

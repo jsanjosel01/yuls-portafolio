@@ -1,0 +1,274 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Inter', 'system-ui', -apple-system, sans-serif;
+
+  /* === COLORES SEMÁNTICOS (apuntan a las variables CSS de :root/.light) === */
+  --color-background:        var(--bg);
+  --color-surface:           var(--surface);
+  --color-surface-alt:       var(--surface-alt);
+  --color-foreground:        var(--fg);
+  --color-foreground-muted:  var(--fg-muted);
+  --color-border:            var(--border-color);
+  --color-primary:           var(--primary);
+  --color-primary-fg:        var(--primary-fg);
+
+  /* === PALETA LILAC FIJA (decorativa, igual en ambos temas) === */
+  --color-lilac-50:  #f5f0ff;
+  --color-lilac-100: #ede5ff;
+  --color-lilac-200: #d9c7ff;
+  --color-lilac-300: #c4a6ff;
+  --color-lilac-400: #b088ff;
+  --color-lilac-500: #9b6dff;
+  --color-lilac-600: #8b5cf6;
+  --color-lilac-700: #7c3aed;
+  --color-lilac-800: #6d28d9;
+  --color-lilac-900: #5b21b6;
+
+  --color-lavender-300: #c7b8ea;
+  --color-lavender-400: #b8a4e3;
+  --color-lavender-500: #a78bdb;
+
+  --color-amethyst-400: #9966cc;
+  --color-amethyst-500: #8a4fbf;
+  --color-amethyst-600: #7b38b2;
+
+  /* Radios */
+  --radius-sm:  0.375rem;
+  --radius-md:  0.5rem;
+  --radius-lg:  0.75rem;
+  --radius-xl:  1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  /* Animaciones */
+  --animate-float:           float 6s ease-in-out infinite;
+  --animate-glow-pulse:      glow-pulse 2s ease-in-out infinite;
+  --animate-fade-in-up:      fade-in-up 0.6s ease-out forwards;
+  --animate-slide-in-left:   slide-in-left 0.6s ease-out forwards;
+  --animate-slide-in-right:  slide-in-right 0.6s ease-out forwards;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+  }
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 0.8; }
+  }
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slide-in-left {
+    from { opacity: 0; transform: translateX(-40px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes slide-in-right {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+}
+
+/* ============================================================
+   TEMA DARK (por defecto)
+   ============================================================ */
+:root {
+  color-scheme: dark;
+
+  --bg:           #0a0a14;
+  --surface:      #161628;
+  --surface-alt:  #141428;
+  --fg:           #ede5ff;
+  --fg-muted:     #c7b8ea;
+  --border-color: rgba(139, 92, 246, 0.15);
+  --primary:      #8b5cf6;
+  --primary-fg:   #ffffff;
+
+  /* nubes separadoras */
+  --cloud-fill-about:  #141428;
+  --cloud-fill-next:   #0a0a14;
+  --bento-card-bg:     #161628;
+}
+
+/* ============================================================
+   TEMA LIGHT
+   ============================================================ */
+:root.light {
+  color-scheme: light;
+
+  --bg:           #f5f0ff;
+  --surface:      #ffffff;
+  --surface-alt:  #ede5ff;
+  --fg:           #1a0a2e;
+  --fg-muted:     #5b3d8a;
+  --border-color: rgba(139, 92, 246, 0.45);
+  --primary:      #7c3aed;
+  --primary-fg:   #ffffff;
+
+  /* nubes separadoras en light */
+  --cloud-fill-about: #ede5ff;
+  --cloud-fill-next:  #f5f0ff;
+  --bento-card-bg:    #faf7ff;
+}
+
+
+/* ============================================================
+   BASE — normalización y reset
+   ============================================================ */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-color: var(--border-color);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Inputs */
+  input, textarea, select {
+    color: var(--fg);
+    background-color: var(--surface);
+  }
+
+  /* Ocultar iconos intrusivos del navegador */
+  input::-ms-reveal, input::-ms-clear { display: none !important; }
+  input[type="password"]::-webkit-credentials-auto-fill-button {
+    visibility: hidden !important;
+    display: none !important;
+  }
+}
+
+/* Corrección autocompletado Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--fg) !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--surface) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar       { width: 8px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: #8b5cf6; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #9b6dff; }
+
+::selection { background-color: #8b5cf6; color: #fff; }
+
+/* ============================================================
+   UTILIDADES GLOBALES
+   ============================================================ */
+.text-gradient-lilac {
+  background: linear-gradient(135deg, #c4a6ff, #9b6dff, #9966cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-lilac {
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.15),
+              0 0 30px rgba(139, 92, 246, 0.05);
+}
+
+.glow-lilac-hover:hover {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3),
+              0 0 40px rgba(139, 92, 246, 0.1);
+}
+
+/* Destello que cruza la tarjeta flotante */
+@keyframes shimmer-card {
+  0%   { transform: translateX(-120%) skewX(-15deg); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateX(220%) skewX(-15deg); opacity: 0; }
+}
+
+.shimmer-sweep {
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(168, 85, 247, 0.18) 50%,
+    rgba(255, 255, 255, 0.12) 55%,
+    rgba(168, 85, 247, 0.18) 60%,
+    transparent 70%
+  );
+  animation: shimmer-card 4s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* noise overlay sutil */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.015;
+  z-index: 100;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   LIGHT MODE — Boost visibilidad bordes e iconos lila
+   Los colores con opacidad baja (/10, /15, /20) se pierden
+   en fondos claros. Este bloque los refuerza globalmente.
+   ============================================================ */
+:root.light {
+  /* Fondos de iconos y chips */
+  .bg-lilac-500\/10  { background-color: rgba(139, 92, 246, 0.18) !important; }
+  .bg-lilac-500\/15  { background-color: rgba(139, 92, 246, 0.22) !important; }
+  .bg-lilac-500\/20  { background-color: rgba(139, 92, 246, 0.28) !important; }
+  .bg-lilac-600\/10  { background-color: rgba(124, 58, 237, 0.18) !important; }
+  .bg-lilac-600\/15  { background-color: rgba(124, 58, 237, 0.22) !important; }
+  .bg-lilac-600\/20  { background-color: rgba(124, 58, 237, 0.28) !important; }
+
+  /* Bordes */
+  .border-lilac-600\/10 { border-color: rgba(124, 58, 237, 0.35) !important; }
+  .border-lilac-600\/15 { border-color: rgba(124, 58, 237, 0.40) !important; }
+  .border-lilac-600\/20 { border-color: rgba(124, 58, 237, 0.45) !important; }
+  .border-lilac-500\/20 { border-color: rgba(139, 92, 246, 0.45) !important; }
+  .border-lilac-500\/25 { border-color: rgba(139, 92, 246, 0.50) !important; }
+  .border-lilac-500\/30 { border-color: rgba(139, 92, 246, 0.55) !important; }
+  .border-lilac-500\/40 { border-color: rgba(139, 92, 246, 0.60) !important; }
+
+  /* Iconos: los tonos claros (200, 300, 400) son invisibles en light */
+  .text-lilac-200 { color: #6d28d9 !important; }
+  .text-lilac-300 { color: #7c3aed !important; }
+  .text-lilac-400 { color: #8b5cf6 !important; }
+
+  /* Chips / pills de texto */
+  .text-lilac-400\/80 { color: rgba(124, 58, 237, 0.9) !important; }
+}
+
+/* MARQUESINA (MARQUEE) INFINITA */
+@keyframes marquee-infinite {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-infinite 60s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
