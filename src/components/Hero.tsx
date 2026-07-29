@@ -256,7 +256,7 @@ export default function Hero() {
               className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-full transition-colors shadow-lg backdrop-blur-sm cursor-pointer border border-white/20"
             >
               <X className="h-4 w-4" />
-              Cerrar
+              {t('hero.cvClose')}
             </button>
           </div>
 
@@ -276,7 +276,7 @@ export default function Hero() {
             className="flex items-center gap-2 px-6 py-3 bg-lilac-600 hover:bg-lilac-500 text-white text-sm sm:text-base font-semibold rounded-full transition-colors shadow-lg"
           >
             <Download className="h-4 w-4" />
-            Descargar CV
+            {t('hero.cvDownload')}
           </a>
 
         </div>
