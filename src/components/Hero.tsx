@@ -47,6 +47,13 @@ export default function Hero() {
   const [isExpanded, setIsExpanded] = useState(false) 
   const [isCvModalOpen, setIsCvModalOpen] = useState(false)
 
+  // Escucha el evento del navbar (logo Yuls) para cerrar el modal
+  useEffect(() => {
+    const handler = () => setIsCvModalOpen(false)
+    window.addEventListener('close-cv-modal', handler)
+    return () => window.removeEventListener('close-cv-modal', handler)
+  }, [])
+
   const handleCvClick = () => {
     // En móvil los iframes no renderizan PDFs — abrimos en nueva pestaña directamente
     if (window.innerWidth < 1024) {
@@ -247,44 +254,45 @@ export default function Hero() {
 
       {/* Modal del CV */}
       {isCvModalOpen && (
-        // Fondo oscuro — clic fuera cierra el modal
+        /* Fondo oscuro — clic fuera cierra */
         <div
-          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md animate-fade-in flex flex-col items-center justify-center p-4 sm:p-8 gap-4"
+          className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-start justify-center pt-20 px-4 pb-4 sm:px-8 sm:pb-8 animate-fade-in"
           onClick={() => setIsCvModalOpen(false)}
         >
-          {/* Botón X fijo — esquina superior derecha, siempre visible */}
-          <button
-            onClick={() => setIsCvModalOpen(false)}
-            className="fixed top-4 right-4 z-[110] flex items-center justify-center w-10 h-10 bg-white text-gray-900 rounded-full shadow-xl hover:bg-gray-100 transition-colors cursor-pointer"
-            aria-label="Cerrar"
-          >
-            <X className="h-5 w-5" />
-          </button>
-
-          {/* Contenido del modal — stopPropagation para no cerrar al hacer clic dentro */}
+          {/* Ventana del modal */}
           <div
-            className="w-full max-w-4xl flex flex-col gap-4 flex-1 min-h-0"
+            className="relative w-full max-w-3xl h-[80vh] flex flex-col rounded-2xl overflow-hidden shadow-2xl border border-white/10"
             onClick={e => e.stopPropagation()}
           >
-            {/* Visor del PDF */}
-            <div className="w-full flex-1 min-h-0 rounded-xl overflow-hidden shadow-2xl bg-white">
+            {/* Barra superior con título y botones */}
+            <div className="shrink-0 bg-zinc-900 border-b border-zinc-700 px-5 py-3 flex items-center justify-between">
+              <span className="text-white text-sm font-semibold opacity-70 tracking-wide">Curriculum Vitae</span>
+              <div className="flex items-center gap-2">
+                <a
+                  href="/cv.pdf"
+                  download="Julia_Yuls_CV.pdf"
+                  className="flex items-center gap-2 px-4 py-1.5 bg-lilac-600 hover:bg-lilac-500 text-white text-sm font-semibold rounded-full transition-colors"
+                >
+                  <Download className="h-4 w-4" />
+                  {t('hero.cvDownload')}
+                </a>
+                <button
+                  onClick={() => setIsCvModalOpen(false)}
+                  className="flex items-center justify-center w-8 h-8 bg-white hover:bg-gray-200 text-gray-900 rounded-full transition-colors cursor-pointer"
+                  aria-label="Cerrar"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+
+            {/* Visor PDF */}
+            <div className="flex-1 bg-white overflow-hidden">
               <iframe
-                src="/cv.pdf#toolbar=0"
+                src="/cv.pdf#toolbar=0&scrollbar=1"
                 className="w-full h-full border-none"
                 title="CV PDF"
               />
-            </div>
-
-            {/* Botón Descargar debajo y centrado */}
-            <div className="flex justify-center">
-              <a
-                href="/cv.pdf"
-                download="Julia_Yuls_CV.pdf"
-                className="flex items-center gap-2 px-6 py-3 bg-lilac-600 hover:bg-lilac-500 text-white text-sm sm:text-base font-semibold rounded-full transition-colors shadow-lg"
-              >
-                <Download className="h-4 w-4" />
-                {t('hero.cvDownload')}
-              </a>
             </div>
           </div>
         </div>

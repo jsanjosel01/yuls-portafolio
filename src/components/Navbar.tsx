@@ -134,7 +134,12 @@ const Navbar = () => {
         {/* Logo */}
         <a
           href="#"
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+          onClick={(e) => {
+            e.preventDefault()
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+            // Cierra el modal del CV si estuviera abierto
+            window.dispatchEvent(new CustomEvent('close-cv-modal'))
+          }}
           className="group transition-transform duration-300 hover:scale-105"
           aria-label="Inicio"
         >
